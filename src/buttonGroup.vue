@@ -5,7 +5,15 @@
 </template>
 <script>
     export default {
-
+        mounted() {   /*当buttonGroup出现在页面中时触发*/
+            console.log(this.$el.children);
+            for(let node of this.$el.children) {
+                console.log(node)
+                if(node.nodeName.toLowerCase() !== 'button') {
+                    console.warn('g-button-group 的子元素应该全是 g-button')
+                }
+            }
+        }
     }
 </script>
 <style lang="scss">
