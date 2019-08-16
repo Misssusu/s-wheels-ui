@@ -5,4 +5,6 @@
     box-sizing: border-box
 }
 ```
+运行parcel:
+./node_modules/.bin/parcel index.html --no-cache
 
