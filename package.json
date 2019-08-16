@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/Misssusu/wheel/issues"
   },
-  "homepage": "https://github.com/Misssusu/wheel#readme"
+  "homepage": "https://github.com/Misssusu/wheel#readme",
+  "dependencies": {
+    "vue": "^2.6.10"
+  }
 }
