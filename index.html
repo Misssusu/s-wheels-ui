@@ -35,25 +35,26 @@
 </head>
 <body>
 <div id="app">
-    <g-button icon="seetings" icon-position="left">
+    <g-button icon="settings" icon-position="left">
         按钮JS
     </g-button>
-    <g-button icon="seetings">
+    <g-button icon="settings">
         按钮
     </g-button>
-    <g-button icon="seetings" icon-position="right">
+    <g-button icon="settings" icon-position="right">
         按钮
     </g-button>
-    <g-button :loading="loadings" @click="loadings = !loadings">
-        按钮
+    <g-button :loading="loadings" icon="settings" @click="loadings = !loadings">
+        按钮loading
     </g-button>
     <g-button-group>
-        <g-button icon="seetings" icon-position="right">按钮</g-button>
+        <g-button icon="settings" icon-position="right">按钮</g-button>
         <g-button icon="left">上一页</g-button>
         <g-button icon="right" icon-position="right">下一页</g-button>
     </g-button-group>
+    <div id="test"></div>
 </div>
 <script src="./src/app.js"></script>
-<script src="//at.alicdn.com/t/font_1355557_24fsne09ent.js"></script>
+<script src="//at.alicdn.com/t/font_1355557_qrfgxtcqcfm.js"></script>
 </body>
 </html>
