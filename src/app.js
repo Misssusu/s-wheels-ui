@@ -12,7 +12,10 @@ new Vue({
         loadings: false
     }
 });
-import chai from "chai"
+import chai from "chai";
+import spies from "chai-spies";
+
+chai.use(spies);
 
 const expect = chai.expect;
 console.log(Button);
@@ -94,10 +97,10 @@ console.log(Button);
         }
     });
     vm.$mount();
-    vm.$on('click',function() {
-        expect(1).to.eq(1)
-    });
+    const spy = chai.spy(function(){});
+    vm.$on('click',spy);
     //期待click执行
     let button = vm.$el;
     button.click();
+    expect(spy).to.have.been.called()
 }
