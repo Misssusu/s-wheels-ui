@@ -35,24 +35,30 @@
 </head>
 <body>
 <div id="app">
-    <g-button icon="settings" icon-position="left">
-        按钮JS
-    </g-button>
-    <g-button icon="settings">
-        按钮
-    </g-button>
-    <g-button icon="settings" icon-position="right">
-        按钮
-    </g-button>
-    <g-button :loading="loadings" icon="settings" @click="loadings = !loadings">
-        按钮loading
-    </g-button>
-    <g-button-group>
-        <g-button icon="settings" icon-position="right">按钮</g-button>
-        <g-button icon="left">上一页</g-button>
-        <g-button icon="right" icon-position="right">下一页</g-button>
-    </g-button-group>
-    <div id="test"></div>
+    <s-input></s-input>
+    <s-input :readonly="true"></s-input>
+    <s-input disabled></s-input>
+    <s-input error="名字错误"></s-input>
+    <!--    <div>-->
+<!--        <s-button icon="settings" icon-position="left">-->
+<!--            按钮JS-->
+<!--        </s-button>-->
+<!--        <s-button icon="settings">-->
+<!--            按钮-->
+<!--        </s-button>-->
+<!--        <s-button icon="settings" icon-position="right">-->
+<!--            按钮-->
+<!--        </s-button>-->
+<!--        <s-button :loading="loadings" icon="settings" @click="loadings = !loadings">-->
+<!--            按钮loading-->
+<!--        </s-button>-->
+<!--        <s-button-group>-->
+<!--            <s-button icon="settings" icon-position="right">按钮</s-button>-->
+<!--            <s-button icon="left">上一页</s-button>-->
+<!--            <s-button icon="right" icon-position="right">下一页</s-button>-->
+<!--        </s-button-group>-->
+<!--    </div>-->
+
 </div>
 <script src="./src/app.js"></script>
 </body>

@@ -1,5 +1,5 @@
 <template>
-    <div class="g-button-group">
+    <div class="s-button-group">
         <slot></slot>
     </div>
 </template>
@@ -10,17 +10,17 @@
             for(let node of this.$el.children) {
                 console.log(node)
                 if(node.nodeName.toLowerCase() !== 'button') {
-                    console.warn('g-button-group 的子元素应该全是 g-button')
+                    console.warn('s-button-group 的子元素应该全是 s-button')
                 }
             }
         }
     }
 </script>
 <style lang="scss">
-    .g-button-group {
+    .s-button-group {
         display: inline-flex;
         vertical-align: middle;
-        > .g-button {
+        > .s-button {
             &:not(:first-child) {
                 margin-left: -1px;
             }
