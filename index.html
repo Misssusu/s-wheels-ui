@@ -35,7 +35,10 @@
 </head>
 <body>
 <div id="app">
-    <s-input value="张三"></s-input>
+    <s-input v-model="message"></s-input>
+    {{message}}
+    <s-input v-model="message"></s-input>
+
     <s-input :readonly="true"></s-input>
     <s-input disabled></s-input>
     <s-input error="名字错误"></s-input>

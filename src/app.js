@@ -11,7 +11,8 @@ Vue.component('s-input', Input);
 new Vue({
     el: "#app",
     data: {
-        loadings: false
+        loadings: false,
+        message: ''
     },
     methods: {
         inputChange(e){
