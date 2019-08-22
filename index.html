@@ -35,10 +35,11 @@
 </head>
 <body>
 <div id="app">
-    <s-input></s-input>
+    <s-input value="张三"></s-input>
     <s-input :readonly="true"></s-input>
     <s-input disabled></s-input>
     <s-input error="名字错误"></s-input>
+    <s-input @change="inputChange"></s-input>
     <!--    <div>-->
 <!--        <s-button icon="settings" icon-position="left">-->
 <!--            按钮JS-->

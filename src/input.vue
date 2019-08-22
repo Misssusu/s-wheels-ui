@@ -1,6 +1,11 @@
 <template>
     <div class="s-input" :class="{error}">
-        <input type="text" :disabled="disabled" :readonly="readonly" :error="error">
+        <input type="text" :disabled="disabled" :value="value" :readonly="readonly" :error="error"
+               @change="$emit('change', $event)"
+               @input="$emit('input', $event)"
+               @focus="$emit('focus', $event)"
+               @blur="$emit('blur', $event)"
+        >
         <template v-if="error">
             <s-icon name="error" class="icon-error"></s-icon>
             <span class="errorMessage">{{error}}</span>
@@ -10,9 +15,14 @@
 <script>
     import Icon from "./icon";
     export default{
-        components: {Icon},
+        components: {
+            's-icon': Icon
+        },
         name: '',      //在使用Vue开发者工具的时候进行标签的命名
         props: {
+            value: {
+              type: String
+            },
             disabled: {
                 type: Boolean,
                 default: false

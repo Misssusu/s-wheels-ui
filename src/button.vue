@@ -11,7 +11,7 @@
     import Icon from "./icon";
     export default {
         components: {
-            'g-icon': Icon
+            's-icon': Icon
         },
         props: {
             icon: String,
