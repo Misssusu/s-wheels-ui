@@ -9,7 +9,14 @@
 </template>
 <script>
     export default {
-        inject: ['eventBus']
+      inject: ['eventBus'],
+      mounted() {
+        this.eventBus.$on('update:selected', (selected, vm)=>{
+          let {width, left} = vm.$el.getBoundingClientRect();
+          this.$refs.line.style.width = `${width}px`;
+          this.$refs.line.style.left = `${left}px`;
+        })
+      }
     }
 </script>
 <style lang="scss" scoped>
@@ -21,10 +28,10 @@
         justify-content: flex-start;
         position: relative;
         >.line {
-            width: 100px;
             border-bottom: 1px solid $blue;
             position: absolute;
             bottom: 0;
+            transition: 350ms;
         }
         > .actions {
             margin-left: auto;

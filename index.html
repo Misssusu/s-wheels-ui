@@ -25,7 +25,7 @@
         }
 
         #app {
-            margin: 40px;
+            /*margin: 40px;*/
         }
 
         body {
@@ -37,7 +37,7 @@
 <div id="app">
     <s-tabs :selected.sync="selectedTab">
         <s-tabs-nav>
-            <template v-slot:actions>
+            <template v-slot:actions="actions">
                 <button>按钮</button>
             </template>
             <s-tabs-item name="one">
@@ -45,7 +45,7 @@
                 Tab1
             </s-tabs-item>
             <s-tabs-item name="two" disabled>Tab2</s-tabs-item>
-            <s-tabs-item name="three">Tab3</s-tabs-item>
+            <s-tabs-item name="three">Tab3333333333</s-tabs-item>
             <s-tabs-item name="four">Tab4</s-tabs-item>
         </s-tabs-nav>
         <s-tabs-body>
