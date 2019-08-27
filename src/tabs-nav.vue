@@ -16,8 +16,8 @@
     .s-tabs-nav {
         height: $tabs-height;
         display: flex;
-        align-items: center;
         justify-content: flex-start;
+        border: 1px solid red;
         > .actions {
             margin-left: auto;
         }
