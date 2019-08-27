@@ -5,9 +5,7 @@
 </template>
 <script>
     export default {
-        props: {
-
-        }
+        inject: ['eventBus']
     }
 </script>
 <style lang="scss">
