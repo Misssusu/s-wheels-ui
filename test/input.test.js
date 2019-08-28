@@ -78,32 +78,5 @@ describe('Input', () => {
                 expect(callback).to.have.been.calledWith('hi')
             });
         });
-        // it('支持input事件', () => {
-        //     vm = new Constructor({}).$mount();
-        //     const callback = sinon.fake();
-        //     vm.$on('input', callback);
-        //     let event = new Event('input');
-        //     const inputElement = vm.$el.querySelector('input');
-        //     inputElement.dispatchEvent(event);
-        //     expect(callback).to.have.been.calledWith(event)
-        // });
-        // it('支持focus事件', () => {
-        //     vm = new Constructor({}).$mount();
-        //     const callback = sinon.fake();
-        //     vm.$on('focus', callback);
-        //     let event = new Event('focus');
-        //     const inputElement = vm.$el.querySelector('input');
-        //     inputElement.dispatchEvent(event);
-        //     expect(callback).to.have.been.calledWith(event)
-        // });
-        // it('支持blur事件', () => {
-        //     vm = new Constructor({}).$mount();
-        //     const callback = sinon.fake();
-        //     vm.$on('blur', callback);
-        //     let event = new Event('blur');
-        //     const inputElement = vm.$el.querySelector('input');
-        //     inputElement.dispatchEvent(event);
-        //     expect(callback).to.have.been.calledWith(event)
-        // });
     })
 });

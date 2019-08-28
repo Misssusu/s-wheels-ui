@@ -30,6 +30,10 @@
           }
         },
         mounted() {
+          if(this.$children.length==0){
+            console && console.warn &&
+            console.warn('s-tabs 的子组件应该是 s-tabs-nav 和 s-tabs-body，但你没有写子组件')
+          }
           this.$children.forEach((vm)=>{
             if(vm.$options.name === 's-tabs-nav') {
               vm.$children.forEach((childVm)=>{
