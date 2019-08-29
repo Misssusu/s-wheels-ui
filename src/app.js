@@ -8,6 +8,7 @@ import TabsNav from "./tabs-nav";
 import TabsItem from "./tabs-item";
 import TabsBody from "./tabs-body";
 import TabsPane from "./tabs-pane";
+import Popover from "./popover";
 
 Vue.component('s-button', Button);
 Vue.component('s-icon', Icon);
@@ -18,6 +19,7 @@ Vue.component('s-tabs-nav', TabsNav);
 Vue.component('s-tabs-item', TabsItem);
 Vue.component('s-tabs-body', TabsBody);
 Vue.component('s-tabs-pane', TabsPane);
+Vue.component('s-popover', Popover);
 
 new Vue({
     el: "#app",
