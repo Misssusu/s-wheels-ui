@@ -1,9 +1,11 @@
 <template>
-    <div class="s-popover" @click="targetContent">
+    <div class="s-popover" >
         <div class="content-wrapper" v-if="visible">
             <slot name="content"></slot>
         </div>
-        <slot></slot>
+        <div @click="targetContent">
+            <slot></slot>
+        </div>
     </div>
 </template>
 <script>
@@ -16,6 +18,7 @@
       methods: {
           targetContent(){
             this.visible = !this.visible
+
           }
       }
     }
