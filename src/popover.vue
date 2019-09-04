@@ -26,6 +26,7 @@
           }
         }
       },
+
       methods: {
         onClick(event){
           if (this.$refs.triggerWrapper.contains(event.target)) {
@@ -41,25 +42,28 @@
         positionContent () {
           const {contentWrapper, triggerWrapper} = this.$refs;
           document.body.appendChild(contentWrapper);
-          let {width, height, top, left} = triggerWrapper.getBoundingClientRect();
-          console.log(this.position);
-          if(this.position === 'top') {
-            contentWrapper.style.left = left + window.scrollX + 'px';
-            contentWrapper.style.top = top + window.scrollY + 'px';
-          }else if(this.position === 'bottom') {
-            contentWrapper.style.left = left + window.scrollX + 'px';
-            contentWrapper.style.top = top + height + window.scrollY + 'px';
-          }else if(this.position === 'left') {
-            let {height: contentHeight} = contentWrapper.getBoundingClientRect();
-            console.log(contentHeight);
-            contentWrapper.style.left = left + window.scrollX + 'px';
-            contentWrapper.style.top = top - (contentHeight - height)/2 + window.scrollY + 'px';
-          }else if(this.position === 'right') {
-            let {height: contentHeight} = contentWrapper.getBoundingClientRect();
-            console.log(contentHeight);
-            contentWrapper.style.left = left + width + window.scrollX + 'px';
-            contentWrapper.style.top = top - (contentHeight - height)/2 + window.scrollY + 'px';
-          }
+          const {width, height, top, left} = triggerWrapper.getBoundingClientRect();
+          const {height: contentHeight} = contentWrapper.getBoundingClientRect();
+          const positions = {
+            top: {
+              left: left + window.scrollX,
+              top: top + window.scrollY
+            },
+            bottom: {
+              left: left + window.scrollX,
+              top: top + height + window.scrollY
+            },
+            left: {
+              left: left + window.scrollX,
+              top: top + (height - contentHeight)/2 + window.scrollY
+            },
+            right: {
+              left: left + width + window.scrollX,
+              top: top + (height - contentHeight)/2 + window.scrollY
+            }
+          };
+          contentWrapper.style.left = positions[this.position].left + 'px';
+          contentWrapper.style.top = positions[this.position].top + 'px';
         },
         open () {
           this.visible = true;
