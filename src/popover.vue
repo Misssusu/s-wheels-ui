@@ -21,11 +21,19 @@
       };
     },
     mounted() {
+      this.timer = null;
       if(this.trigger === 'click') {
         this.$refs.popover.addEventListener('click', this.onClick)
       }else {
-        this.$refs.popover.addEventListener('mouseenter', this.open);
-        this.$refs.popover.addEventListener('mouseleave', this.close)
+        this.$refs.popover.addEventListener('mouseenter', ()=>{
+          console.log('mouseenter popover');
+          this.open();
+          this.hoverContentWrapper()
+        });
+        this.$refs.popover.addEventListener('mouseleave', ()=>{
+          this.timer = setTimeout(this.close,200);
+          console.log('mouseleave popover');
+        });
       }
     },
     destroyed () {
@@ -113,6 +121,25 @@
           return;
         }
         this.close();
+      },
+      mouseEnterContentWrapper() {
+        console.log('mouseenter content');
+        clearTimeout(this.timer);
+        this.open();
+      },
+      mouseLeaveContentWrapper() {
+        this.close();
+        this.$refs.contentWrapper.removeEventListener('mouseenter', this.mouseEnterContentWrapper);
+        this.$refs.contentWrapper.removeEventListener('mouseleave', this.mouseLeaveContentWrapper)
+      },
+      hoverContentWrapper(){
+        this.$nextTick(()=>{
+          if(this.$refs.contentWrapper) {
+            console.log('content add');
+            this.$refs.contentWrapper.addEventListener('mouseenter', this.mouseEnterContentWrapper);
+            this.$refs.contentWrapper.addEventListener('mouseleave', this.mouseLeaveContentWrapper)
+          }
+        })
       }
     }
   };
