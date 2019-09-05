@@ -74,10 +74,11 @@
 
     <div style="margin-top: 40px">
         <s-popover position="top" trigger="hover">
-            <template slot="content">
+            <template  v-slot:content="{close}">
                 <div>
                     snksncksncksnckscnks我cnkscnksnckshishsduhsaudhsajdksajdisahdsadj我
                 </div>
+                <s-button @click="close">关闭</s-button>
             </template>
             <s-button>点我</s-button>
         </s-popover>
@@ -155,9 +156,9 @@
     <!--        <s-button icon="settings" icon-position="right">-->
     <!--            按钮-->
     <!--        </s-button>-->
-    <!--        <s-button :loading="loadings" icon="settings" @click="loadings = !loadings">-->
-    <!--            按钮loading-->
-    <!--        </s-button>-->
+            <s-button :loading="loadings" icon="settings" @click="loadings = !loadings">
+                按钮loading
+            </s-button>
     <!--        <s-button-group>-->
     <!--            <s-button icon="settings" icon-position="right">按钮</s-button>-->
     <!--            <s-button icon="left">上一页</s-button>-->

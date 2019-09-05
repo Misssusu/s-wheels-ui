@@ -5,7 +5,7 @@
             v-if="visible"
             ref="contentWrapper"
         >
-            <slot name="content"></slot>
+            <slot name="content"  :close="close"></slot>
         </div>
         <span ref="triggerWrapper" class="trigger-wrapper">
             <slot></slot>
