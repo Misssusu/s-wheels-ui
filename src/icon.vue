@@ -7,6 +7,7 @@
     import "./svg";
     export default {
         props: ['name']
+      //add
     }
 </script>
 <style lang="scss">
