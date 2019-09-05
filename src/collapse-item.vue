@@ -3,7 +3,7 @@
         <div class="title">
             {{title}}
         </div>
-        <div class="content" v-if="open">
+        <div class="content" @click.stop v-if="open">
             <slot></slot>
         </div>
     </div>
