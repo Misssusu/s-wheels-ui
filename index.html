@@ -36,17 +36,17 @@
 <div id="app" style="padding-top:100px;padding-left:100px">
 
     <div>
-        <s-collapse accordion>
-            <s-collapse-item title="面板1">
+        <s-collapse  :selected.sync="isSelected">
+            <s-collapse-item title="面板1" name="1">
                 <div>面板1内容</div>
             </s-collapse-item>
-            <s-collapse-item title="面板2">
+            <s-collapse-item title="面板2" name="2">
                 <div>面板2内容</div>
             </s-collapse-item>
-            <s-collapse-item title="面板3">
+            <s-collapse-item title="面板3" name="3">
                 <div>面板3内容</div>
             </s-collapse-item>
-            <s-collapse-item title="面板4">
+            <s-collapse-item title="面板4" name="4">
                 <div>面板4内容</div>
             </s-collapse-item>
         </s-collapse>

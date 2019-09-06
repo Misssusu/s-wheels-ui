@@ -30,7 +30,8 @@ new Vue({
     data: {
         loadings: false,
         message: '',
-        selectedTab: 'four'
+        selectedTab: 'four',
+        isSelected: '2'
     },
     methods: {
         inputChange(e){

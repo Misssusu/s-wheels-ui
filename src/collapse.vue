@@ -8,15 +8,30 @@
 
   export default {
     props: {
-      type: Boolean,
-      accordion: false
+      accordion: {
+        type: Boolean,
+        accordion: false
+      },
+      selected: {
+        type: String
+      }
+    },
+    data() {
+      return {
+        eventBus: new Vue()
+      }
     },
     provide() {
-      if(this.accordion) {
-        return {
-          eventBus: new Vue()
-        }
-      }
+      return {
+        eventBus: this.eventBus
+      };
+    },
+    mounted() {
+      console.log(this.selected);
+      this.eventBus.$emit('update:selected', this.selected);
+      this.eventBus.$on('update:selected', (name)=>{
+        this.$emit('update:selected', name)
+      })
     }
   };
 </script>

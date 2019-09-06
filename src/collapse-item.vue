@@ -3,7 +3,7 @@
         <div class="title">
             {{title}}
         </div>
-        <div class="content" v-if="open">
+        <div class="content" v-if="isOpen">
             <slot></slot>
         </div>
     </div>
@@ -12,34 +12,42 @@
   export default {
     data() {
       return {
-        open: false
+        isOpen: false
       };
     },
     props: {
       title: {
         type: String,
         required: true
+      },
+      name: {
+        type: String,
+        required: true
       }
     },
     inject: ['eventBus'],
     mounted() {
-      this.eventBus && this.eventBus.$on('update:selected', (targetVm)=>{
-        if(targetVm !== this) {
+      this.eventBus && this.eventBus.$on('update:selected', (name)=>{
+        if(name !== this.name) {
           this.close()
+        }else {
+          this.open()
         }
       })
     },
     methods: {
       toggle() {
-        if(this.open) {
+        if(this.isOpen) {
           this.close()
         }else {
-          this.open = true;
-          this.eventBus.$emit('update:selected', this);
+          this.eventBus.$emit('update:selected', this.name);
         }
       },
       close() {
-        this.open = false;
+        this.isOpen = false;
+      },
+      open() {
+        this.isOpen = true;
       }
     }
   };
