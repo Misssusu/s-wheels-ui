@@ -4,9 +4,21 @@
     </div>
 </template>
 <script>
-    export default {
+  import Vue from 'vue';
 
+  export default {
+    props: {
+      type: Boolean,
+      accordion: false
+    },
+    provide() {
+      if(this.accordion) {
+        return {
+          eventBus: new Vue()
+        }
+      }
     }
+  };
 </script>
 <style lang="scss" scoped>
     $grey: #ddd;

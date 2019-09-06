@@ -1,9 +1,9 @@
 <template>
-    <div class="s-collapse-item" @click="open = !open">
+    <div class="s-collapse-item" @click="toggle">
         <div class="title">
             {{title}}
         </div>
-        <div class="content" @click.stop v-if="open">
+        <div class="content" v-if="open">
             <slot></slot>
         </div>
     </div>
@@ -19,6 +19,27 @@
       title: {
         type: String,
         required: true
+      }
+    },
+    inject: ['eventBus'],
+    mounted() {
+      this.eventBus && this.eventBus.$on('update:selected', (targetVm)=>{
+        if(targetVm !== this) {
+          this.close()
+        }
+      })
+    },
+    methods: {
+      toggle() {
+        if(this.open) {
+          this.close()
+        }else {
+          this.open = true;
+          this.eventBus.$emit('update:selected', this);
+        }
+      },
+      close() {
+        this.open = false;
       }
     }
   };
