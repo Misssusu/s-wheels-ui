@@ -13,13 +13,13 @@
         accordion: false
       },
       selected: {
-        type: String
+        type: Array
       }
     },
     data() {
       return {
         eventBus: new Vue()
-      }
+      };
     },
     provide() {
       return {
@@ -28,10 +28,15 @@
     },
     mounted() {
       console.log(this.selected);
+      //默认选中
       this.eventBus.$emit('update:selected', this.selected);
-      this.eventBus.$on('update:selected', (name)=>{
-        this.$emit('update:selected', name)
-      })
+      this.eventBus.$on('update:selected', (nameArray) => {
+        this.$emit('update:selected', nameArray);
+      });
+      //给子组件传递accordion
+      this.$children.forEach((vm) => {
+        vm.single = this.accordion
+      });
     }
   };
 </script>

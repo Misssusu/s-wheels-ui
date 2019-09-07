@@ -12,7 +12,9 @@
   export default {
     data() {
       return {
-        isOpen: false
+        isOpen: false,
+        single: false,
+        nameArray: []
       };
     },
     props: {
@@ -27,20 +29,30 @@
     },
     inject: ['eventBus'],
     mounted() {
-      this.eventBus && this.eventBus.$on('update:selected', (name)=>{
-        if(name !== this.name) {
-          this.close()
-        }else {
+      this.eventBus && this.eventBus.$on('update:selected', (nameArray)=>{
+        if(nameArray.indexOf(this.name) >=0 ) {
           this.open()
+        }else {
+          if(this.single) {
+            this.close()
+          }
         }
       })
     },
     methods: {
       toggle() {
         if(this.isOpen) {
+          console.log('close');
+          this.eventBus.$emit('update:selected', this.nameArray);
+          let index = this.nameArray.indexOf(this.name);
+          this.nameArray.splice(index,1);
           this.close()
         }else {
-          this.eventBus.$emit('update:selected', this.name);
+          console.log('open');
+          console.log(this.name);
+          this.nameArray.push(this.name);
+          console.log(this.nameArray);
+          this.eventBus.$emit('update:selected', this.nameArray);
         }
       },
       close() {
