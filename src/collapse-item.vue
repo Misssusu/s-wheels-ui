@@ -30,6 +30,7 @@
     inject: ['eventBus'],
     mounted() {
       this.eventBus && this.eventBus.$on('update:selected', (nameArray)=>{
+        this.nameArray = nameArray;
         if(nameArray.indexOf(this.name) >=0 ) {
           this.open()
         }else {
@@ -42,16 +43,15 @@
     methods: {
       toggle() {
         if(this.isOpen) {
-          console.log('close');
           this.eventBus.$emit('update:selected', this.nameArray);
           let index = this.nameArray.indexOf(this.name);
           this.nameArray.splice(index,1);
           this.close()
         }else {
-          console.log('open');
-          console.log(this.name);
+          if(this.single) {
+            this.nameArray = []
+          }
           this.nameArray.push(this.name);
-          console.log(this.nameArray);
           this.eventBus.$emit('update:selected', this.nameArray);
         }
       },

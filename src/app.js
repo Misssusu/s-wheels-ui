@@ -31,7 +31,7 @@ new Vue({
         loadings: false,
         message: '',
         selectedTab: 'four',
-        isSelected: ['2','4']
+        isSelected: ['2']
     },
     methods: {
         inputChange(e){
