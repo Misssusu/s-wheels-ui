@@ -12,9 +12,7 @@
   export default {
     data() {
       return {
-        isOpen: false,
-        single: false,
-        nameArray: []
+        isOpen: false
       };
     },
     props: {
@@ -29,37 +27,19 @@
     },
     inject: ['eventBus'],
     mounted() {
-      this.eventBus && this.eventBus.$on('update:selected', (nameArray)=>{
-        this.nameArray = nameArray;
-        if(nameArray.indexOf(this.name) >=0 ) {
-          this.open()
-        }else {
-          if(this.single) {
-            this.close()
-          }
-        }
+      this.eventBus && this.eventBus.$on('update:selected', (name)=>{
+        this.isOpen = name.indexOf(this.name) >= 0;
       })
     },
     methods: {
       toggle() {
         if(this.isOpen) {
-          this.eventBus.$emit('update:selected', this.nameArray);
-          let index = this.nameArray.indexOf(this.name);
-          this.nameArray.splice(index,1);
-          this.close()
+          //面板内容打开的时候
+          this.eventBus && this.eventBus.$emit('update:removeSelected', this.name);
         }else {
-          if(this.single) {
-            this.nameArray = []
-          }
-          this.nameArray.push(this.name);
-          this.eventBus.$emit('update:selected', this.nameArray);
+          //面板内容关闭的时候
+          this.eventBus && this.eventBus.$emit('update:addSelected', this.name);
         }
-      },
-      close() {
-        this.isOpen = false;
-      },
-      open() {
-        this.isOpen = true;
       }
     }
   };

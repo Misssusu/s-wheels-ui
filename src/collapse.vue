@@ -30,12 +30,24 @@
       console.log(this.selected);
       //默认选中
       this.eventBus.$emit('update:selected', this.selected);
-      this.eventBus.$on('update:selected', (nameArray) => {
-        this.$emit('update:selected', nameArray);
+
+      this.eventBus.$on('update:addSelected', (name) => {
+        let selectedCopy = JSON.parse(JSON.stringify(this.selected));
+        if (this.accordion) {
+          selectedCopy = [name]
+        } else {
+          selectedCopy.push(name)
+        }
+        this.eventBus.$emit('update:selected', selectedCopy);
+        this.$emit('update:selected', selectedCopy)
       });
-      //给子组件传递accordion
-      this.$children.forEach((vm) => {
-        vm.single = this.accordion
+
+      this.eventBus.$on('update:removeSelected', (name) => {
+        let selectedCopy = JSON.parse(JSON.stringify(this.selected));
+        let index = selectedCopy.indexOf(name);
+        selectedCopy.splice(index, 1);
+        this.eventBus.$emit('update:selected', selectedCopy);
+        this.$emit('update:selected', selectedCopy)
       });
     }
   };
