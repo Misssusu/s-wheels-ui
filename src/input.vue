@@ -1,11 +1,13 @@
 <template>
     <div class="s-input" :class="{error}">
-        <input type="text" :disabled="disabled" :value="value" :readonly="readonly" :error="error"
-               @change="$emit('change', $event.target.value)"
-               @input="$emit('input', $event.target.value)"
-               @focus="$emit('focus', $event.target.value)"
-               @blur="$emit('blur', $event.target.value)"
-        >
+        <label>
+            <input type="text" :disabled="disabled" :value="value" :readonly="readonly" :error="error"
+                   @change="$emit('change', $event.target.value)"
+                   @input="$emit('input', $event.target.value)"
+                   @focus="$emit('focus', $event.target.value)"
+                   @blur="$emit('blur', $event.target.value)"
+            >
+        </label>
         <template v-if="error">
             <s-icon name="error" class="icon-error"></s-icon>
             <span class="errorMessage">{{error}}</span>
@@ -43,7 +45,7 @@
     $border-color: #999;
     $border-color-hover: #666;
     $font-size: 12px;
-    $box-shadow-color: rgb(0,0,0,0.5);
+    $box-shadow-color: rgba(0,0,0,0.5);
     $red: #db0011;
     .s-input {
         font-size: $font-size;
