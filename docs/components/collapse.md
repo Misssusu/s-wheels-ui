@@ -4,8 +4,10 @@ title: Collapse
 
 # 折叠面板
 
- 使用方法
- 
+## 简单用法
+
+#### 预览 
+&nbsp;
 <ClientOnly>
 <collapse-demos></collapse-demos>
 </ClientOnly>

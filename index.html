@@ -28,23 +28,23 @@
 <body>
 <div id="app" style="padding-top:100px;padding-left:100px">
 
-    <div>
-        <s-collapse  :selected.sync="isSelected" accordion>
-            <s-collapse-item title="面板1" name="1">
-                <div>面板1内容</div>
-            </s-collapse-item>
-            <s-collapse-item title="面板2" name="2">
-                <div>面板2内容</div>
-            </s-collapse-item>
-            <s-collapse-item title="面板3" name="3">
-                <div>面板3内容</div>
-            </s-collapse-item>
-            <s-collapse-item title="面板4" name="4">
-                <div>面板4内容</div>
-            </s-collapse-item>
-        </s-collapse>
-        {{isSelected}}
-    </div>
+<!--    <div>-->
+<!--        <s-collapse  :selected.sync="isSelected" accordion>-->
+<!--            <s-collapse-item title="面板1" name="1">-->
+<!--                <div>面板1内容</div>-->
+<!--            </s-collapse-item>-->
+<!--            <s-collapse-item title="面板2" name="2">-->
+<!--                <div>面板2内容</div>-->
+<!--            </s-collapse-item>-->
+<!--            <s-collapse-item title="面板3" name="3">-->
+<!--                <div>面板3内容</div>-->
+<!--            </s-collapse-item>-->
+<!--            <s-collapse-item title="面板4" name="4">-->
+<!--                <div>面板4内容</div>-->
+<!--            </s-collapse-item>-->
+<!--        </s-collapse>-->
+<!--        {{isSelected}}-->
+<!--    </div>-->
 
 
 
@@ -150,16 +150,16 @@
     <!--        </s-tabs>-->
     <!--    </div>-->
 
-    <!--    <div>-->
-    <!--        <s-input v-model="message"></s-input>-->
-    <!--        {{message}}-->
-    <!--        <s-input v-model="message"></s-input>-->
+        <div>
+            <s-input v-model="message"></s-input>
+            {{message}}
+            <s-input v-model="message"></s-input>
 
-    <!--        <s-input :readonly="true"></s-input>-->
-    <!--        <s-input disabled></s-input>-->
-    <!--        <s-input error="名字错误"></s-input>-->
-    <!--        <s-input @change="inputChange"></s-input>-->
-    <!--    </div>-->
+            <s-input :readonly="true"></s-input>
+            <s-input disabled></s-input>
+            <s-input error="名字错误"></s-input>
+            <s-input @change="inputChange"></s-input>
+        </div>
 
     <!--    <div>-->
 <!--            <s-button >-->
