@@ -49,6 +49,7 @@
     $border-radius: 4px;
     .s-collapse-item {
         > .title {
+            cursor: pointer;
             min-height: 32px;
             display: flex;
             align-items: center;
