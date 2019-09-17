@@ -5,6 +5,7 @@
 </template>
 <script>
   export default {
+    name: 's-tabs-item',
     data() {
       return {
         active: false
@@ -32,7 +33,7 @@
     created() {
       if(this.eventBus) {
         this.eventBus.$on('update:selected', (name) => {
-          this.active = this.name === name;
+          this.active = name === this.name;
         });
       }
     },

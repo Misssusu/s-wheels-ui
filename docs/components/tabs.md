@@ -1,8 +1,14 @@
 ---
-title: Tabs
+title: Tabs 标签页
 ---
 
-# 标签
+# 标签页
 
- 使用方法
+## 简单用法
+
+#### 预览 
+&nbsp;
+<ClientOnly>
+<tabs-demos></tabs-demos>
+</ClientOnly>
  

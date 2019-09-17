@@ -30,7 +30,7 @@ new Vue({
     data: {
         loadings: false,
         message: '',
-        selectedTab: 'four',
+        selectedTab: '1',
         isSelected: ['2']
     },
     methods: {

@@ -4,9 +4,9 @@ module.exports = {
   description: 'UI框架',
   themeConfig: {
     nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Guide', link: '/guide/' },
-      { text: 'External', link: 'https://google.com' },
+      { text: '主页', link: '/' },
+      // { text: 'Guide', link: '/guide/' },
+      // { text: 'External', link: 'https://google.com' },
     ],
     sidebar: [
       {
@@ -17,10 +17,10 @@ module.exports = {
         title: '组件',
         children: [
           'components/button',
-          'components/collapse',
           'components/input',
           'components/popover',
           'components/tabs',
+          'components/collapse'
         ]
       }
     ]

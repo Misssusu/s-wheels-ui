@@ -127,39 +127,39 @@
 <!--    </div>-->
 
 
-    <!--    <div>-->
-    <!--        <s-tabs :selected.sync="selectedTab">-->
-    <!--            <s-tabs-nav>-->
-    <!--                <template v-slot:actions="actions">-->
-    <!--                    <button>按钮</button>-->
-    <!--                </template>-->
-    <!--                <s-tabs-item name="one">-->
-    <!--                    <s-icon name="loading"></s-icon>-->
-    <!--                    Tab1-->
-    <!--                </s-tabs-item>-->
-    <!--                <s-tabs-item name="two" disabled>Tab2</s-tabs-item>-->
-    <!--                <s-tabs-item name="three">Tab3333333333</s-tabs-item>-->
-    <!--                <s-tabs-item name="four">Tab4</s-tabs-item>-->
-    <!--            </s-tabs-nav>-->
-    <!--            <s-tabs-body>-->
-    <!--                <s-tabs-pane name="one">Tab1内容</s-tabs-pane>-->
-    <!--                <s-tabs-pane name="two">Tab2内容</s-tabs-pane>-->
-    <!--                <s-tabs-pane name="three">Tab3内容</s-tabs-pane>-->
-    <!--                <s-tabs-pane name="four">Tab4内容</s-tabs-pane>-->
-    <!--            </s-tabs-body>-->
-    <!--        </s-tabs>-->
-    <!--    </div>-->
-
         <div>
-            <s-input v-model="message"></s-input>
-            {{message}}
-            <s-input v-model="message"></s-input>
-
-            <s-input :readonly="true"></s-input>
-            <s-input disabled></s-input>
-            <s-input error="名字错误"></s-input>
-            <s-input @change="inputChange"></s-input>
+            <s-tabs :selected.sync="selectedTab">
+                <s-tabs-nav>
+                    <template v-slot:actions="actions">
+                        <button>按钮</button>
+                    </template>
+                    <s-tabs-item name="1">
+                        <s-icon name="loading"></s-icon>
+                        Tab1
+                    </s-tabs-item>
+                    <s-tabs-item name="2" disabled>Tab2</s-tabs-item>
+                    <s-tabs-item name="3">Tab3333333333</s-tabs-item>
+                    <s-tabs-item name="4">Tab4</s-tabs-item>
+                </s-tabs-nav>
+                <s-tabs-body>
+                    <s-tabs-pane name="1">Tab1内容</s-tabs-pane>
+                    <s-tabs-pane name="2">Tab2内容</s-tabs-pane>
+                    <s-tabs-pane name="3">Tab3内容</s-tabs-pane>
+                    <s-tabs-pane name="4">Tab4内容</s-tabs-pane>
+                </s-tabs-body>
+            </s-tabs>
         </div>
+
+<!--        <div>-->
+<!--            <s-input v-model="message"></s-input>-->
+<!--            {{message}}-->
+<!--            <s-input v-model="message"></s-input>-->
+
+<!--            <s-input :readonly="true"></s-input>-->
+<!--            <s-input disabled></s-input>-->
+<!--            <s-input error="名字错误"></s-input>-->
+<!--            <s-input @change="inputChange"></s-input>-->
+<!--        </div>-->
 
     <!--    <div>-->
 <!--            <s-button >-->
