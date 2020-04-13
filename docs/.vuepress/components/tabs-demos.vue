@@ -16,11 +16,11 @@
     </div>
 </template>
 <script>
-  import Tabs from "../../../src/tabs"
-  import TabsNav from "../../../src/tabs-nav"
-  import TabsBody from "../../../src/tabs-body"
-  import TabsItem from "../../../src/tabs-item"
-  import TabsPane from "../../../src/tabs-pane"
+  import Tabs from "../../../src/tabs/tabs"
+  import TabsNav from "../../../src/tabs/tabs-nav"
+  import TabsBody from "../../../src/tabs/tabs-body"
+  import TabsItem from "../../../src/tabs/tabs-item"
+  import TabsPane from "../../../src/tabs/tabs-pane"
 
   export default {
     data() {

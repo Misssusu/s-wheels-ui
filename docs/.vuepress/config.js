@@ -10,7 +10,7 @@ module.exports = {
     ],
     sidebar: [
       {
-        title: '入门',
+        title: '指南',
         children: ['install/','get-started/']
       },
       {

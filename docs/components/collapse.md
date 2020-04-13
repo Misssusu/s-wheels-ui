@@ -11,6 +11,7 @@ title: Collapse 折叠面板
 <ClientOnly>
 <collapse-demos></collapse-demos>
 </ClientOnly>
+
 #### 代码
 ```vue
 <s-collapse  :selected.sync="isSelected" >
@@ -27,4 +28,15 @@ title: Collapse 折叠面板
      <div>面板4内容</div>
    </s-collapse-item>
 </s-collapse>
+
+<script >
+  export default {
+    data(){
+      return {
+        isSelected: ['2']
+      }
+    }
+  }
+</script>
+
 ```

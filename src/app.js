@@ -1,16 +1,16 @@
 import Vue from "vue";
-import Button from "./button";
-import Icon from "./icon";
-import ButtonGroup from "./buttonGroup";
-import Input from "./input";
-import Tabs from "./tabs";
-import TabsNav from "./tabs-nav";
-import TabsItem from "./tabs-item";
-import TabsBody from "./tabs-body";
-import TabsPane from "./tabs-pane";
-import Popover from "./popover";
-import Collapse from "./collapse";
-import CollapseItem from "./collapse-item";
+import Button from "./button/button";
+import Icon from "./icon/icon";
+import ButtonGroup from "./button/buttonGroup";
+import Input from "./input/input";
+import Tabs from "./tabs/tabs";
+import TabsNav from "./tabs/tabs-nav";
+import TabsItem from "./tabs/tabs-item";
+import TabsBody from "./tabs/tabs-body";
+import TabsPane from "./tabs/tabs-pane";
+import Popover from "./popover/popover";
+import Collapse from "./collapse/collapse";
+import CollapseItem from "./collapse/collapse-item";
 
 Vue.component('s-button', Button);
 Vue.component('s-icon', Icon);
