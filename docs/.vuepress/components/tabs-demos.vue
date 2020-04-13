@@ -10,9 +10,9 @@
                 <s-tabs-pane name="2">content 2</s-tabs-pane>
             </s-tabs-body>
         </s-tabs>
-        <h4>代码</h4>
-        <pre><code>{{contents}}</code></pre>
-        <pre><code>{{jsContents}}</code></pre>
+<!--        <h4>代码</h4>-->
+<!--        <pre><code>{{contents}}</code></pre>-->
+<!--        <pre><code>{{jsContents}}</code></pre>-->
     </div>
 </template>
 <script>

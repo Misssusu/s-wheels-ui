@@ -2,8 +2,8 @@
     <div>
         <s-input v-model="value"></s-input>
         <div>value: {{value}}</div>
-        <h4>代码</h4>
-        <pre><code>{{contents}}</code></pre>
+<!--        <h4>代码</h4>-->
+<!--        <pre><code>{{contents}}</code></pre>-->
     </div>
 </template>
 <script>
