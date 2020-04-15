@@ -3,11 +3,11 @@ import { describe } from 'mocha';
 const expect = chai.expect; //断言
 import Vue from 'vue'
 
-import Tabs from "../src/tabs";
-import TabsNav from "../src/tabs-nav";
-import TabsItem from "../src/tabs-item";
-import TabsBody from "../src/tabs-body";
-import TabsPane from "../src/tabs-pane";
+import Tabs from "../src/tabs/tabs";
+import TabsNav from "../src/tabs/tabs-nav";
+import TabsItem from "../src/tabs/tabs-item";
+import TabsBody from "../src/tabs/tabs-body";
+import TabsPane from "../src/tabs/tabs-pane";
 
 Vue.component('s-tabs', Tabs);
 Vue.component('s-tabs-nav', TabsNav);

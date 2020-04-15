@@ -2,7 +2,7 @@ import { describe } from 'mocha';
 
 const expect = chai.expect; //断言
 import Vue from 'vue';
-import Popover from '../src/popover';
+import Popover from '../src/popover/popover';
 
 Vue.component('s-popover', Popover);
 
